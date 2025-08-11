@@ -1,0 +1,8 @@
+node_modules
+.git
+.env.local
+.env.example
+.env.development
+.eslintrc.json
+README.md
+next.config.mjs
