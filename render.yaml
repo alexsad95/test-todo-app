@@ -3,7 +3,8 @@ services:
     name: todo-app
     env: node
     buildCommand: npm install && npm run build
-    startCommand: npm start
+    startCommand: npm run test:db && npm run db:migrate && npm run db:seed:categories && npm start
+    healthCheckPath: /api/health
     envVars:
       - key: NODE_ENV
         value: production
@@ -18,3 +19,4 @@ databases:
     databaseName: todo_db
     user: todo_user
     plan: free
+    ipAllowList: []

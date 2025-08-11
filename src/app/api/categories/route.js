@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import db from '@/lib/db.mjs';
+import db from '@/lib/models';
 import { TEXTS } from '@/lib/texts';
 
 const HTTP_STATUS = {

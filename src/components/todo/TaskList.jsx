@@ -59,11 +59,11 @@ function DraggableTaskItem({
           </div>
         </div>
         <div 
-          className="p-2 rounded transition-colors cursor-pointer hover:bg-destructive/10 hover:text-destructive"
+          className="p-2 rounded transition-colors cursor-pointer hover:bg-destructive/20 hover:text-destructive group"
           onClick={() => onRemove(task.id)}
           title="Delete task"
         >
-          <Trash2 className="h-4 w-4 text-muted-foreground" />
+          <Trash2 className="h-4 w-4 text-destructive group-hover:text-destructive transition-colors" />
         </div>
       </li>
     );
@@ -107,11 +107,11 @@ function DraggableTaskItem({
         </div>
       </div>
       <div 
-        className="p-2 rounded transition-colors cursor-pointer hover:bg-destructive/10 hover:text-destructive"
+        className="p-2 rounded transition-colors cursor-pointer hover:bg-destructive/20 hover:text-destructive group"
         onClick={() => onRemove(task.id)}
         title="Delete task"
       >
-        <Trash2 className="h-4 w-4 text-muted-foreground" />
+        <Trash2 className="h-4 w-4 text-destructive group-hover:text-destructive transition-colors" />
       </div>
     </li>
   );
@@ -474,7 +474,7 @@ export default function TaskList({ refreshKey = 0 }) {
           </div>
         </CardHeader>
         
-        <CardContent className="p-0">
+        <CardContent className="p-6">
           {sortedTasks.length === 0 ? (
             <p className="px-6 py-3 text-sm text-muted-foreground">
               {TEXTS.TASK_LIST.NO_TASKS_MESSAGE}

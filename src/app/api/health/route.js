@@ -10,7 +10,6 @@ export async function GET() {
       version: process.env.npm_package_version || '1.0.0',
       checks: {
         api: 'ok',
-        database: 'unknown',
         memory: {
           used: Math.round(process.memoryUsage().heapUsed / 1024 / 1024),
           total: Math.round(process.memoryUsage().heapTotal / 1024 / 1024)

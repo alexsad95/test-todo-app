@@ -3,26 +3,11 @@
 const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');
-const process = require('process');
+const { sequelize } = require('../src/lib/sequelize');
 
 const BASENAME = path.basename(__filename);
-const ENV = process.env.NODE_ENV || 'development';
-const CONFIG = require(path.join(__dirname, '..', 'config', 'config.js'))[ENV];
 
 const db = {};
-
-let sequelize;
-
-if (CONFIG.use_env_variable) {
-  sequelize = new Sequelize(process.env[CONFIG.use_env_variable], CONFIG);
-} else {
-  sequelize = new Sequelize(
-    CONFIG.database, 
-    CONFIG.username, 
-    CONFIG.password, 
-    CONFIG
-  );
-}
 
 fs
   .readdirSync(__dirname)
